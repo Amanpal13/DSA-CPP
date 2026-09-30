@@ -30,7 +30,7 @@
 // 1 <= nums.length <= 100
 // 1 <= nums[i] <= 100
 
-code:-
+//code:-
 class Solution {
 public:
     bool check(vector<int>& nums) {
