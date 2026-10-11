@@ -103,3 +103,37 @@ public:
         
     }
 };
+
+
+//it is in o(nlogn) complexity not the optimal solution
+
+
+
+// now this code is in o(n) optimal solution but
+// I had not study stl thats why i cant write this optimal code 
+// code:-
+
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        unordered_set<int> s(nums.begin(), nums.end());
+        int maxcount = 0;
+
+        for(int num : s) {
+            if(s.count(num - 1) == 0) {
+                int count = 1;
+                int current = num;
+
+                while(s.count(current + 1)) {
+                    current++;
+                    count++;
+                }
+
+                maxcount = max(maxcount, count);
+            }
+        }
+        return maxcount;
+    }
+};
+
+
